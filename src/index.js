@@ -1,8 +1,8 @@
-function component() {
-  const element = document.createElement('div');
-  element.innerHTML = ('To DO List');
+import './style.css';
 
-  return element;
-}
-
-document.body.appendChild(component());
+const list = document.querySelector('ul');
+list.addEventListener('click', (event) => {
+  if (event.target.tagname === 'li') {
+    event.target.classList.toggle('checked');
+  }
+}, false);
