@@ -27,6 +27,7 @@ This is the second project in the Microverse's JavaScript module.
 
 - Run this command in your OS terminal: `https://github.com/kimothokamau/todo_list_js` to get a local copy of the project.
 - Navigate to the project directory
+- Switch to 'feature-webpack' branch by typing `git checkout feature-webpack`
 - Run `npm install`
 - Run `npm run build`
 - Navigate to the dist folder (`cd dist`) and open the index.html file in your favorite browser. Preferably chrome

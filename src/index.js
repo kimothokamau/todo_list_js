@@ -11,15 +11,6 @@ for (let i = 0; myNodelist.length; i++) {
   myNodelist[i].appendChild(span);
 }
 
-// Click on a close button to hide the current list item
-const close = document.getElementsByClassName('close');
-for (let i = 0; i < close.length; i++) {
-  close[i].addEventListener('click', function () {
-    const div = this.parentElement;
-    div.style.display = 'none';
-  });
-}
-
 // Add a "checked" class when clicking on a list item
 const list = document.querySelector('ul');
 list.addEventListener('click', (event) => {
