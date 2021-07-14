@@ -10,25 +10,24 @@ ul {
 
 ul li {
   cursor: pointer;
-  position:relative;
+  position: relative;
   padding: 12px 8px 12px 40px;
   font-size: 18px;
   background: #eee;
   transition: 0.2s;
 }
 
-
 /* Darker background-color on hover */
 ul li:hover {
   background: #ddd;
 }
-
 
 /* Style the header */
 .header {
   background-color: #eee;
   padding: 30px 40px;
   color: black;
+
   /* text-align: center; */
 }
 
@@ -57,15 +56,3 @@ input {
   transition: 0.3s;
   border-radius: 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
