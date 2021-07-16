@@ -1,4 +1,4 @@
-import { clearTasks, addTasks, store } from '../backend/fakeTasks';
+import { addTodo, todoslocal } from './data.js';
 
 const dragstart = (element) => {
   element.classList.add('flying');
@@ -23,19 +23,17 @@ const drop = (element) => {
 
   let i = 0;
   draggables.forEach((draggable) => {
-    draggable.setAttribute('task', i);
+    draggable.setAttribute('todo', i);
     i += 1;
   });
 
-  clearTasks();
   draggables.forEach((draggable) => {
     const description = draggable.getElementsByClassName('description')[0].textContent;
     const completed = draggable.getElementsByClassName('completed')[0].checked;
-    const index = draggable.getAttribute('task');
+    const index = draggable.getAttribute('todo');
 
-    addTasks(description, completed, index);
-
-    store();
+    addTodo(description, completed, index);
+    todoslocal();
   });
 
   element.classList.remove('dragover');
