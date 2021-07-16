@@ -6,8 +6,6 @@ const displayTodos = (todos) => {
     const today_desc = document.createElement('p');
     today_desc.textContent = 'Todays ToDos';
 
-    // const sync = document.createElement()
-
     today_cont.appendChild(today_desc);
 
     return today_cont;
@@ -20,7 +18,7 @@ const displayTodos = (todos) => {
     const todo_text = document.createElement('input');
     todo_text.type = 'text';
     todo_text.placeholder = 'Add to your list...';
-    todo_text.id = "todo-text";
+    todo_text.className = 'todo-text';
 
     new_todo_cont.appendChild(todo_text);
     return new_todo_cont;
@@ -30,11 +28,12 @@ const displayTodos = (todos) => {
   const todo_item = (todo) => {
     const todo_li = document.createElement('li');
     todo_li.setAttribute('todo', todo.index);
+    todo_li.draggable = 'true';
 
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     checkbox.name = 'completed';
-    checkbox.classList.add('completed');
+    checkbox.classList.add('checkbox');
 
     const todo_desc = document.createElement('span');
     todo_desc.classList.add('description');
@@ -43,6 +42,19 @@ const displayTodos = (todos) => {
     todo_li.appendChild(checkbox);
     todo_li.appendChild(todo_desc);
 
+    todo_li.addEventListener('dragstart', () => dragstart(todo_li));
+
+    todo_li.addEventListener('dragover', (e) => dragover(todo_li, e));
+
+    todo_li.addEventListener('dragleave', () => dragleave(todo_li));
+
+    todo_li.addEventListener('drop', () => {
+      drop(todo_li);
+    });
+
+    todo_li.addEventListener('dragend', () => {
+      dragend(todo_li);
+    });
 
     return todo_li;
 
