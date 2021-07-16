@@ -1,8 +1,14 @@
 import './style.css';
+import displayTodos from './frontend.js';
+import { todos } from './data.js';
 
-const list = document.querySelector('ul');
-list.addEventListener('click', (event) => {
-  if (event.target.tagname === 'li') {
-    event.target.classList.toggle('checked');
+const todoapp = () => {
+  let todoLs = JSON.parse(localStorage.getItem('todos'));
+
+  if (todoLs === null) {
+    todoLs = todos;
   }
-}, false);
+  displayTodos(todos);
+};
+
+todoapp();
